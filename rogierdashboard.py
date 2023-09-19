@@ -37,7 +37,7 @@ outputFile.write("time,bresser_ch1,bresser_ch2,nexus\n")
 
 for currentFile in allCSVFiles:
   if ("20230915" in currentFile):
-    print("Skipping 20230915 on purpose. MUHAHAHAHAAAA! nah, it's silly data. We should really skip it.")
+    print("Skipping 20230915 on purpose. MUHAHAHAHAA! nah, it's silly data. We should really skip it.")
   else:
     with open(currentFile) as fp:
       for line in fp:
@@ -87,6 +87,7 @@ bresserTwoFig.add_trace(go.Scatter(x=sensorValues.time, y=sensorValues.bresser_c
 nexusFig.add_trace(go.Scatter(x=sensorValues.time, y=sensorValues.nexus, mode='lines', name='Weather station'))
 
 app = dash.Dash(__name__)
+app.title = 'Olaf dashboard'
 app.layout = html.Div([
   dcc.Tabs([
     dcc.Tab(label='Alles', children=[
@@ -109,7 +110,7 @@ app.layout = html.Div([
       html.H1("Weerstation buurman", style={'text-align':'center'}),
       dcc.Graph(id="sensorThree", figure=nexusFig)
     ]),
-    dcc.Tab(label='Correlatie een', children=[
+    dcc.Tab(label='Correlatie', children=[
       html.H1("Correlatie met sensor een", style={'text-align':'center'}),
       dcc.Graph(id="correlationOne", figure=correlationOneFig),
       html.H1("Correlatie met sensor twee", style={'text-align':'center'}),
