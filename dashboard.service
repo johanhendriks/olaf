@@ -1,0 +1,11 @@
+[Unit]
+Description=Dashboard service for aggregate data as graphs
+Wants=network.target
+
+[Service]
+ExecStart=/home/rogier/olaf/rogierdashboard.py
+StandardOut=null
+StandardError=null
+
+[Install]
+WantedBy=graphical.target
