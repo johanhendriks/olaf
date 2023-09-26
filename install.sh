@@ -6,6 +6,7 @@ sudo apt-get install git
 # Clone the open-source dashboard code
 cd /home/rogier/
 git clone https://github.com/johanhendriks/olaf
+cd /home/rogier/olaf/
 git pull
 sudo chmod ugo+x /home/rogier/olaf/dashboard_start.sh
 sudo chown rogier /home/rogier/olaf/dashboard_start.sh
