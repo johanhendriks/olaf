@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /home/rogier/olaf/
 git pull
-/home/rogier/olaf/rogierdashboard.py
+sudo -u rogier /home/rogier/olaf/rogierdashboard.py
