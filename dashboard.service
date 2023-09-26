@@ -3,7 +3,7 @@ Description=Dashboard service for aggregate data as graphs
 Wants=network.target
 
 [Service]
-ExecStart=/home/rogier/olaf/rogierdashboard.py
+ExecStart=/home/rogier/olaf/dashboard_start.sh
 StandardOut=null
 StandardError=null
 
