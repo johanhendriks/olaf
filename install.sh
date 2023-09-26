@@ -6,6 +6,7 @@ sudo apt-get install git
 # Clone the open-source dashboard code
 cd /home/rogier/
 git clone https://github.com/johanhendriks/olaf
+git pull
 sudo chmod ugo+x /home/rogier/olaf/dashboard_start.sh
 sudo chown rogier /home/rogier/olaf/dashboard_start.sh
 sudo chgrp rogier /home/rogier/olaf/dashboard_start.sh
@@ -15,7 +16,7 @@ sudo chgrp rogier /home/rogier/olaf/rogierdashboard.py
 
 # Install dependencies
 sudo -u rogier pip install pandas
-sudo apt-get install libatlas-base-dev
+sudo apt-get install -y libatlas-base-dev
 sudo -u rogier pip install plotly
 sudo -u rogier pip install dash
 
