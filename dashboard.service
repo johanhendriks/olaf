@@ -4,6 +4,8 @@ Wants=network.target
 
 [Service]
 ExecStart=/home/rogier/olaf/dashboard_start.sh
+User=rogier
+Group=rogier
 StandardOut=null
 StandardError=null
 
