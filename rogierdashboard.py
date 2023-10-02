@@ -40,6 +40,7 @@ for currentFile in allCSVFiles:
     print("Skipping 20230915 on purpose. MUHAHAHAHAA! nah, it's silly data. We should really skip it.")
   else:
     with open(currentFile) as fp:
+      print("Opening file"+str(currentFile))
       for line in fp:
         if (";" in line):
           currentComponents = line.split(";")
@@ -48,17 +49,18 @@ for currentFile in allCSVFiles:
 
         dirtyBit = 0
         if (currentComponents[3]=="Nexus-TH"):
-          dirtyBit = 1
-          sensorThree = float(currentComponents[8])
+          if (currentComponents[5]=="89"):
+            dirtyBit = 1
+            sensorThree = float(currentComponents[8])
 
         if (currentComponents[3]=="Bresser-3CH"):
           if (currentComponents[6]=="1"):
             dirtyBit = 1
-            sensorOne = float(currentComponents[13])
+            sensorOne = float(currentComponents[45])
             sensorOne = (sensorOne-32)*(5/9)
           elif (currentComponents[6]=="2"):
             dirtyBit = 1
-            sensorTwo = float(currentComponents[13])
+            sensorTwo = float(currentComponents[45])
             sensorTwo = (sensorTwo-32)*(5/9)
 
         if ((dirtyBit != 0) and (sensorOne != 0) and (sensorTwo != 0) and (sensorThree != 0)):
